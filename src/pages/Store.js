@@ -15,7 +15,7 @@ function Store() {
     }, [])
 
     return ( 
-        <Container >
+        <Container>
             <h1>Products</h1>
             <p>Take a look at our products</p>
             <div className="store-container">

@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 
 function About() {
     return ( 
-        <Container className="container">
+        <Container>
             <h1>About Us</h1>
             <Row className="justify-content-md-center">
                 <Col sm={8}>
