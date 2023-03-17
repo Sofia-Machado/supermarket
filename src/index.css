@@ -14,6 +14,57 @@ code {
     monospace;
 }
 
+p {
+  font-size: 1.2rem;
+}
+
 .active {
   font-weight: bolder;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  
+}
+
+.product-container {
+  background-color: antiquewhite;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 7px #c4c4c4;
+}
+
+.product-container h2 {
+  font-size: 1.5rem;
+}
+
+.product-container p {
+  font-size: 1.1rem;
+}
+
+.product-image-container {
+  margin-right: 1.2em;
+  background-color: rgb(255, 255, 255);
+  justify-content: center;
+  border-radius: 20px;
+  padding: 0.5em 0.5em;
+}
+
+.product-image {
+  width: 90px;
+}
+
+.product-text-container {
+  margin-right: 1.2em;
+}
+
+.product-price-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.product-price-container Button {
+  box-shadow: 1px 1px 7px #c4c4c4;
 }

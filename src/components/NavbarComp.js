@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -22,9 +23,10 @@ function NavbarComp() {
               <Nav.Link className={({isActive}) => isActive ? 'active' : ''} href="/">Store</Nav.Link>
               <Nav.Link className={({isActive}) => isActive ? 'active' : ''} href="/about">About</Nav.Link>
             </Nav>
-            <Nav.Link className={({isActive}) => isActive ? 'active' : ''} href="/cart">
-              <Button variant="outline-success">Cart</Button>
-            </Nav.Link>
+            <Button variant="primary">
+              Cart <Badge bg="secondary">9</Badge>
+              <span className="visually-hidden">items in the cart</span>
+            </Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>
