@@ -23,10 +23,12 @@ function NavbarComp() {
               <Nav.Link className={({isActive}) => isActive ? 'active' : ''} href="/">Store</Nav.Link>
               <Nav.Link className={({isActive}) => isActive ? 'active' : ''} href="/about">About</Nav.Link>
             </Nav>
-            <Button variant="primary">
-              Cart <Badge bg="secondary">9</Badge>
-              <span className="visually-hidden">items in the cart</span>
-            </Button>
+            <Nav.Link  href="/cart">
+              <Button variant="primary">
+                Cart <Badge bg="secondary">9</Badge>
+                <span className="visually-hidden">items in the cart</span>
+              </Button>
+            </Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
