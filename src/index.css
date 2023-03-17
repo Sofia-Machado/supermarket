@@ -28,12 +28,19 @@ p {
   padding: 20px;
   
 }
+.store-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+}
 
 .product-container {
   background-color: antiquewhite;
-  padding: 2em;
+  padding: 1.5em;
   border-radius: 20px;
   box-shadow: 1px 1px 7px #c4c4c4;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
 }
 
 .product-container h2 {
@@ -53,7 +60,8 @@ p {
 }
 
 .product-image {
-  width: 90px;
+  max-height: 80px;
+  max-width: 80px;
 }
 
 .product-text-container {
