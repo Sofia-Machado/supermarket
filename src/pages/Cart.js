@@ -1,10 +1,8 @@
 import { Button, Container, Form, Table} from "react-bootstrap";
 import { useState } from "react";
 import {loadStripe} from "@stripe/stripe-js";
-import { useNavigate } from "react-router-dom";
 
 export default function Cart({ cart }) {
-  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const stripeLoadedPromise = loadStripe('pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate');
@@ -13,7 +11,6 @@ export default function Cart({ cart }) {
     0
   );
 
-console.log(url)
   function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
@@ -41,7 +38,8 @@ console.log(url)
       stripe.redirectToCheckout({
          lineItems: lineItems,
           mode: "payment",
-          successUrl: navigate('/checkoutcompleted'),
+          success_url: "https://serverless-payments.netlify.app/success",
+          cancel_url: "https://serverless-payments.netlify.app/cancel",
 
           customerEmail: email
       })
