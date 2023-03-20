@@ -28,8 +28,8 @@ function NavbarComp(props) {
               <Nav.Link className={({isActive}) => isActive ? 'active' : ''}  as={Link} to="/about">About</Nav.Link>
             </Nav>
             <Nav.Link as={Link} to="/cart">
-              <Button variant="primary">
-                Cart <Badge bg="secondary">{cartCount}</Badge>
+              <Button variant="primary" className="btn-cart">
+                Cart <Badge bg="secondary" className='cart-badge'>{cartCount}</Badge>
                 <span className="visually-hidden">items in the cart</span>
               </Button>
             </Nav.Link>

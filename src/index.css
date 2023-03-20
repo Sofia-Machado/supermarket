@@ -65,7 +65,7 @@ p {
 
 .product-quantity {
   position: absolute;
-  background-color: rgb(18, 131, 55);
+  background-color: #2b8379;
   color: white;
   border-radius: 50%;
   font-size: 14px;
@@ -96,6 +96,7 @@ p {
 }
 .product-text-container {
   margin-right: 1.2em;
+  padding-left: 25px;
 }
 
 .product-price-container {
@@ -115,23 +116,36 @@ p {
 
 .btn {
   color: white;
-  background-color: rgb(18, 131, 55);
+  background-color: #2b8379;
   border: none;
   padding: 10px 25px;
   min-width: 90px;
   border-radius: 20px;
 }
 .btn:hover {
-  background-color:rgb(116, 199, 153);
+  background-color: #19a596;
 }
 
+.btn-cart {
+  background-color: #970e3d; 
+}
+
+.btn-cart:hover {
+  background-color: #d62160; 
+}
+
+.cart-badge {
+  background-color: white !important;
+  color: black;
+  border-radius: 20px;
+}
 
 .product-delete {
-  padding: 5px 10px;
+  padding: 2px 5px;
   min-width: 30px;
-  background-color: rgb(158, 21, 21);
-  color: white;
-  border: none;
+  color: rgb(158, 21, 21);
+  border: solid rgb(158, 21, 21) 2px;
+  background-color: transparent;
   border-radius: 20px;
   font-size: 14px;
   display: grid;
@@ -139,7 +153,27 @@ p {
 }
 
 .product-delete:hover {
-  color: rgb(158, 21, 21);
-  background-color: white;
- 
+  background-color: rgb(158, 21, 21);
+  color: white;
+  border: solid #2b8379 2px;
+
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  background-color: #970e3d;
+  color: white;
+}
+
+.table-cart {
+  text-align: center;
+}
+
+.error-input {
+  font-size: 14px;
+  color: #dd1414;
 }

@@ -4,15 +4,37 @@ import {loadStripe} from "@stripe/stripe-js";
 
 export default function Cart({ cart }) {
   const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const stripeLoadedPromise = loadStripe('pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate');
   const totalPrice = cart.reduce(
     (total, product) => total + product.price * product.quantity,
     0
   );
 
+  function validateEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  function handleChange(e) {
+    /* if (!validateEmail(e.target.value)) {
+      setError('Email is Invalid')
+    } else {
+      setError(null)
+    } */
+    setEmail(e.target.value)
+  }
+
   function handleFormSubmit(e) {
     e.preventDefault();
     console.log(email);
+    setError(null);
+
+    if (validateEmail(email)) {
+      console.log('The email is valid');
+    } else {
+      setError('Email is invalid');
+      console.log(error);
+    }
     const lineItems = cart.map(product => {
       return {price: product.price_id, quantity: product.quantity }
     })
@@ -25,7 +47,8 @@ export default function Cart({ cart }) {
           customerEmail: email
       })
       .then(response => console.log(response.error))
-      .catch(error => console.log(error))
+      .catch(error => {
+        console.log(error)})
     })
   
 
@@ -89,7 +112,10 @@ export default function Cart({ cart }) {
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" autoComplete="email"  onChange={(e) => setEmail(e.target.value)} required />
+                    <Form.Control type="email" placeholder="name@example.com" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/" onChange={handleChange} required />
+                    <p className="error-input">
+                    {error}
+                    </p>
                     <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                     </Form.Text>
