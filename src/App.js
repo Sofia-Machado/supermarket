@@ -9,8 +9,7 @@ import ProductStorage from './components/ProductStorage';
 import NavbarComp from './components/NavbarComp';
 import Store from './pages/Store';
 import './App.css';
-import CheckoutCompleted from './pages/CheckoutCompleted';
-import CheckoutIncompleted from './pages/CheckoutIncompleted';
+import NotFound from './pages/NotFound';
 
 function App() {
 
@@ -62,8 +61,7 @@ function App() {
         </Route>
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart cart={cart} />} />
-        <Route path="/checkoutcompleted" element={<CheckoutCompleted />} />
-        <Route path="/checkoutincompleted" element={<CheckoutIncompleted />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     
     </BrowserRouter>

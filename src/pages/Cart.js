@@ -38,8 +38,8 @@ export default function Cart({ cart }) {
       stripe.redirectToCheckout({
          lineItems: lineItems,
           mode: "payment",
+          //doesnt work
           successUrl: "https://illustrious-moonbeam-479971.netlify.app/checkoutcompleted",
-          cancelUrl: "https://illustrious-moonbeam-479971.netlify.app/checkoutincompleted",
 
           customerEmail: email
       })
