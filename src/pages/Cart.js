@@ -16,11 +16,6 @@ export default function Cart({ cart }) {
   }
 
   function handleChange(e) {
-    /* if (!validateEmail(e.target.value)) {
-      setError('Email is Invalid')
-    } else {
-      setError(null)
-    } */
     setEmail(e.target.value)
   }
 
@@ -113,7 +108,7 @@ export default function Cart({ cart }) {
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/" onChange={handleChange} required />
+                    <Form.Control type="email" placeholder="name@example.com" onChange={handleChange} required />
                     <p className="error-input">
                     {error}
                     </p>
