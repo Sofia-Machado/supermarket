@@ -43,7 +43,8 @@ export default function Cart({ cart }) {
       stripe.redirectToCheckout({
          lineItems: lineItems,
           mode: "payment",
-          successUrl: 'http://localhost:3000/',
+          successUrl: 'http://localhost:3000/checkoutcompleted',
+
           customerEmail: email
       })
       .then(response => console.log(response.error))
