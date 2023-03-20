@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -24,10 +24,10 @@ function NavbarComp(props) {
               navbarScroll
               activeKey={location.pathname}
             >
-              <Nav.Link className={({isActive}) => isActive ? 'active' : ''} as={Link} to="/">Store</Nav.Link>
-              <Nav.Link className={({isActive}) => isActive ? 'active' : ''}  as={Link} to="/about">About</Nav.Link>
+              <Nav.Link className={({isActive}) => isActive ? ' active' : ''} as={NavLink} to="/">Store</Nav.Link>
+              <Nav.Link className={({isActive}) => isActive ? ' active' : ''}  as={NavLink} to="/about">About</Nav.Link>
             </Nav>
-            <Nav.Link as={Link} to="/cart">
+            <Nav.Link as={NavLink} to="/cart">
               <Button variant="primary" className="btn-cart">
                 Cart <Badge bg="secondary" className='cart-badge'>{cartCount}</Badge>
                 <span className="visually-hidden">items in the cart</span>

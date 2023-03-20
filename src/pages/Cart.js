@@ -1,8 +1,10 @@
 import { Button, Container, Form, Table} from "react-bootstrap";
 import { useState } from "react";
 import {loadStripe} from "@stripe/stripe-js";
+import { useLocation } from "react-router-dom";
 
 export default function Cart({ cart }) {
+  const url = useLocation();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const stripeLoadedPromise = loadStripe('pk_test_51HsqkCGuhXEITAut89vmc4jtjYd7XPs8hWfo2XPef15MFqI8rCFc8NqQU9WutlUBsd8kmNqHBeEmSrdMMpeEEyfT00KzeVdate');
@@ -11,6 +13,7 @@ export default function Cart({ cart }) {
     0
   );
 
+console.log(url)
   function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
@@ -38,7 +41,7 @@ export default function Cart({ cart }) {
       stripe.redirectToCheckout({
          lineItems: lineItems,
           mode: "payment",
-          successUrl: 'http://localhost:3000/checkoutcompleted',
+          successUrl: 'https://illustrious-moonbeam-479971.netlify.app/checkoutcompleted',
 
           customerEmail: email
       })

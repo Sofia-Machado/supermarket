@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams, Outlet } from "react-router-dom";
+import { NavLink, useParams, Outlet } from "react-router-dom";
 import { Container, Image, Nav } from "react-bootstrap";
 import useFetch from "../useFetch";
 
@@ -23,15 +23,15 @@ function ProductDetails() {
                 <h2>{product.name}</h2>
                 <Image className="product-image" fluid src={product.image} />
             </div>
-            <Nav variant="tabs">
+            <Nav variant="tabs" className="tabs-details">
                 <Nav.Item>
-                    <Nav.Link as={Link} to="">Details</Nav.Link>
+                    <Nav.Link className={({isActive}) => isActive ? 'active' : ''} as={NavLink} to="" end>Details</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to="nutrition">Nutrition</Nav.Link>
+                    <Nav.Link className={({isActive}) => isActive ? 'active' : ''} as={NavLink} to="nutrition">Nutrition</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link as={Link} to="storage">Storage</Nav.Link>
+                    <Nav.Link className={({isActive}) => isActive ? 'active' : ''} as={NavLink} to="storage">Storage</Nav.Link>
                 </Nav.Item>
             </Nav>
             <div>

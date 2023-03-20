@@ -15,7 +15,8 @@ code {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 30px;
 }
 
 .active {
@@ -29,6 +30,21 @@ p {
   
 }
 
+
+.btn {
+  color: white;
+  background-color: #2b8379;
+  border: none;
+  padding: 10px 25px;
+  min-width: 90px;
+  border-radius: 20px;
+}
+.btn:hover {
+  background-color: #19a596;
+}
+
+/* Store */
+
 .store-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -38,6 +54,8 @@ p {
 .store-container h2 {
    font-size: 1.2em;
 }
+
+/* Product */
 
 .product-container {
   background-color: antiquewhite;
@@ -114,18 +132,6 @@ p {
   justify-items: end;
 }
 
-.btn {
-  color: white;
-  background-color: #2b8379;
-  border: none;
-  padding: 10px 25px;
-  min-width: 90px;
-  border-radius: 20px;
-}
-.btn:hover {
-  background-color: #19a596;
-}
-
 .btn-cart {
   background-color: #970e3d; 
 }
@@ -159,6 +165,8 @@ p {
 
 }
 
+/* Cart */
+
 .table {
   border-collapse: collapse;
   width: 100%;
@@ -177,6 +185,29 @@ p {
   font-size: 14px;
   color: #dd1414;
 }
+
+/* Details Page */
+
+.tabs-details {
+  margin: 0 0 40px 0;
+  border-bottom: gray solid 1px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+
+.tabs-details .nav-link {
+  text-decoration: none;
+  padding-bottom: 10px;
+  color: black;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* Success Page */
 
 .success {
   margin-top: 1rem;
