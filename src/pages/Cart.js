@@ -41,7 +41,7 @@ console.log(url)
       stripe.redirectToCheckout({
          lineItems: lineItems,
           mode: "payment",
-          successUrl: '/checkoutcompleted',
+          successUrl: 'illustrious-moonbeam-479971.netlify.app/checkoutcompleted',
 
           customerEmail: email
       })
