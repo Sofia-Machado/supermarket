@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Container, Image, Button } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Product from "../components/Product";
 import useFetch from "../useFetch";
 
 
-function Store() {
+function Store(props) {
     const [products, setProducts] = useState([]);
     const { get, loading } = useFetch("https://react-tutorial-demo.firebaseio.com/");
 
@@ -22,7 +22,11 @@ function Store() {
             {loading && <h2>Loading...</h2>}
                 {products.map((product) => {
                     return (
-                    <Product key={product.id} details={product} ></Product>
+                    <Product key={product.id} 
+                    details={product}
+                    cart={props.cart}
+                    onProductAdd={props.onProductAdd}
+                    onProductDelete={props.onProductDelete} ></Product>
                     )
                 })}
             </div>
